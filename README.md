@@ -1,4 +1,4 @@
-# DOH-ECH – Cloudflare Pages 实现 DoH with ECH 服务
+# DOH-ECH – Cloudflare Pages 实现 DoH with ECH 
 
 基于 Cloudflare Pages 的单文件 **DNS-over-HTTPS (DoH) 服务器**，智能为 Cloudflare / Meta 站点注入 ECH 配置，并支持自定义优选 IP、多域名解析与全球边缘缓存。
 
@@ -16,7 +16,7 @@
   内置 Cloudflare / Meta 静态域名列表，直接返回预设的优选 IP（可自定义覆盖）。
 - ✅ **自定义 IP 替换**  
   通过 `ip4`、`ip6`、`metaIp4`、`metaIp6` 参数强制替换解析结果，支持逗号分隔或 JSON 数组。
-- ✅ **cf 多域名解析**  
+- ✅ **cf 优选多域名解析**  
   `cf` 参数支持逗号分隔的多个域名，并发解析并合并去重 IP，适用于多 CDN 负载均衡。
 - ✅ **双上游竞速**  
   同时查询 Google DNS 和阿里云 DNS，取最快响应，提高解析速度。
@@ -50,8 +50,8 @@
 | `ip6`         | Cloudflare / 所有域名的 IPv6 替换地址                                                     | `::1,::2`                           |
 | `metaIp4`     | Meta 域名的 IPv4 替换地址                                                                 | `157.240.1.1`                       |
 | `metaIp6`     | Meta 域名的 IPv6 替换地址                                                                 | `2a03:2880:...`                     |
-| `cf`          | 解析指定域名（支持逗号分隔多域名）以获取替换 IP，**仅对 Cloudflare 相关域名生效**        | `example.com,ip2.example.com`       |
-| `ech`         | 获取真实 ECH 配置的域名（默认 `cloudflare-ech.com`）                                      | `cloudflare-ech.com`               |
+| `cf`          | 解析优选域名（支持逗号分隔多域名）以获取替换 IP，**仅对 Cloudflare 相关域名生效**        | `example.com,ip2.example.com`       |
+| `ech`         | 获取CF公共ECH配置的域名（默认 `cloudflare-ech.com`）                                      | `cloudflare-ech.com`               |
 
 > **注意**：`cf` 参数仅当目标域名为 Cloudflare 站点（静态列表匹配或 CIDR 探测）时才会生效，避免误替换非 CF 域名。
 
@@ -110,8 +110,7 @@
 
 ## 协议
 
-本项目仅供学习与个人使用，请遵守相关服务条款。
+本项目由AI生成，仅供娱乐目的，请遵守当地法律法规合理使用
 
 ---
 
-如有问题或建议，欢迎提出 Issue 或 PR。
