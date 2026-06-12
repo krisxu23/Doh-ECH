@@ -1,6 +1,6 @@
-# DOH-ECH – Cloudflare Pages 实现 DoH with ECH 
+# DOH-ECH – Cloudflare Pages 实现 DoH with ECH 直连CF托管站点
 
-基于 Cloudflare Pages 的单文件 **DNS-over-HTTPS (DoH) 服务器**，智能为 Cloudflare / Meta 站点注入 ECH 配置，并支持自定义优选 IP、多域名解析与全球边缘缓存。
+基于 Cloudflare Pages 的单文件 **DNS-over-HTTPS (DoH) 服务器**，智能为 Cloudflare / Meta 站点注入 ECH 配置，实现隐藏SNI，并支持自定义优选 IP、多域名解析与全球边缘缓存,实现通过优选ip后，直连CF托管网站如X等，Meta 部分ip也可直连。
 
 ---
 
